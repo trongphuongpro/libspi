@@ -14,10 +14,10 @@ set(CMAKE_SHARED_LIBRARY_LINK_CXX_FLAGS "")
 set(CMAKE_EXE_LINKER_FLAGS -mmcu=${MCU})
 #-----------------------------------------------------------------------------#
 
-set(TARGET **target filename**)
+set(TARGET spi)
 
-add_library(${TARGET} STATIC **source files**)
-target_include_directories(${TARGET} PUBLIC **dirs**)
+add_library(${TARGET} STATIC src/spi_atmega.c)
+target_include_directories(${TARGET} PUBLIC include)
 
 #-----------------------------------------------------------------------------#
 target_compile_options(${TARGET} PUBLIC -mmcu=${MCU}

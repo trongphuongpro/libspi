@@ -1,24 +1,24 @@
-#ifndef LIB_SPI_H
-#define LIB_SPI_H
+#ifndef __SPI__
+#define __SPI__
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
 
-void spi_master_initialize(void);
-void spi_slave_initialize(void);
+typedef enum {MASTER=0, SLAVE=1} SPI_MODE;
 
-uint8_t spi_master_transmit_byte(uint8_t);
-void spi_master_transmit_buffer(uint8_t *, uint8_t);
-uint8_t spi_master_receive_byte(void);
-void spi_master_receive_buffer(uint8_t *, uint8_t);
+void spi_open(SPI_MODE);
 
-uint8_t spi_slave_receive_byte(void);
-void spi_slave_receive_buffer(uint8_t *, uint8_t);
+uint8_t spi_read();
+void spi_readBuffer(void *buffer, uint16_t);
+
+void spi_write(uint8_t);
+void spi_writeBuffer(void *buffer, uint16_t);
+
 
 #ifdef __cplusplus
 }
 #endif
 
-#endif
+#endif /* __SPI__ */
