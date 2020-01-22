@@ -88,6 +88,7 @@ void spi_readBuffer(void *buffer, uint16_t len);
 
 /**
  * @brief Write 1 byte to SPI bus.
+ * @param data data that will be sent.
  * @return nothing.
  */
 void spi_write(uint8_t data);
