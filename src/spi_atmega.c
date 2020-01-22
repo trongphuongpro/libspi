@@ -1,8 +1,12 @@
-#include <avr/io.h>
-#include <avr/interrupt.h>
-#include <string.h>
-#include "spi.h"
+/** 
+ * @file spi_atmega.c
+ * @brief Implementation for SPI communication protocol
+ * @author Nguyen Trong Phuong (aka trongphuongpro)
+ * @date 2020 Jan 22
+ */
 
+#include <avr/io.h>
+#include "spi.h"
 
 #define SPI_PORT	PORTB
 #define SPI_DDR		DDRB
@@ -10,24 +14,19 @@
 #define MOSI	3
 #define MISO	4
 #define SCK		5
-
-#define BUFFERSIZE	100
-
-SPI_MODE mode;
-uint8_t receiveBuffer[BUFFERSIZE];
-volatile uint8_t bufferCursor = 0;
+#define SS		2
 
 
-void spi_master_open(void);
-void spi_slave_open(void);
+static SPI_DEVICEMODE mode;
 
-uint8_t spi_transmit_byte(uint8_t data);
-void spi_transmit_buffer(void *buffer, uint16_t n);
-uint8_t spi_master_receive_byte(void);
-uint8_t spi_slave_receive_byte(void);
-void spi_master_receive_buffer(void *buffer, uint16_t n);
-void spi_slave_receive_buffer(void *buffer, uint16_t n);
-void spi_flush();
+static void spi_master_open(void);
+static void spi_slave_open(void);
+static uint8_t spi_transmit_byte(uint8_t data);
+static void spi_transmit_buffer(void *buffer, uint16_t n);
+static uint8_t spi_master_receive_byte(void);
+static uint8_t spi_slave_receive_byte(void);
+static void spi_master_receive_buffer(void *buffer, uint16_t len);
+static void spi_slave_receive_buffer(void *buffer, uint16_t len);
 
 
 void spi_master_open(void) {
@@ -36,25 +35,68 @@ void spi_master_open(void) {
 	SPI_DDR &= ~(1 << MISO);
 	SPI_PORT |= (1 << MISO); // pull-up resistor for MISO pin
 	
-	
-	SPCR = (1 << SPE) | (1 << MSTR) | (1 << SPR1); // mode; Prescale = 64
+	SPCR = (1 << SPE) | (1 << MSTR) | (1 << SPR1); // data mode 0; Prescale = 64
 }
 
 
 void spi_slave_open(void) {
 	mode = SLAVE;
 	SPI_DDR |= (1 << MISO);
-	SPI_DDR &= ~(1 << MOSI);
-	SPI_PORT |= (1 << MOSI);
-	SPCR = (1 << SPE);
+	SPI_DDR &= ~((1 << MOSI) | (1 << SS));
+	SPI_PORT |= (1 << MOSI) | (1 << SS);
+
+	SPCR = (1 << SPE) | (1 << SPIE); // enable interrupt
 }
 
 
-void spi_open(SPI_MODE mode) {
+void spi_open(SPI_DEVICEMODE mode) {
 	if (mode == MASTER)
 		spi_master_open();
 	else
 		spi_slave_open();
+}
+
+
+void spi_setClockDivider(uint8_t factor) {
+	if (mode == MASTER) {
+		switch (factor) {
+			case 4: case 16: case 64: case 128:	SPSR &= ~(1 << SPI2X);
+												break;
+
+			case 2: case 8: case 32:	SPSR &= ~(1 << SPI2X);
+										SPSR |= (1 << SPI2X);
+										break;								
+		}
+
+		switch (factor) {
+			case 2: case 4:	SPCR &= ~(3 << SPR0);
+							break;
+
+			case 8: case 16:	SPCR &= ~(3 << SPR0);
+								SPCR |= (1 << SPR0);
+								break;
+
+			case 32: case 64:	SPCR &= ~(3 << SPR0);
+								SPCR |= (2 << SPR0);
+								break;
+
+			case 128:	SPCR &= ~(3 << SPR0);
+						SPCR |= (3 << SPR0);
+						break;
+		}
+	}
+}
+
+
+void spi_setBitOrder(SPI_BITORDER order) {
+	SPCR &= ~(1 << DORD);
+	SPCR |= (order << DORD);
+}
+
+
+void spi_setDataMode(SPI_DATAMODE mode) {
+	SPCR &= ~(3 << CPHA);
+	SPCR |= (mode << CPHA);
 }
 
 
@@ -133,14 +175,6 @@ void spi_readBuffer(void *buffer, uint16_t len) {
 }
 
 
-void spi_flush() {
-	memset(receiveBuffer, 0, BUFFERSIZE);
-	bufferCursor = 0;
-}
-
-
-ISR(SPI_STC_vect) {
-	receiveBuffer[bufferCursor++] = SPDR;
-	if (bufferCursor == BUFFERSIZE)
-		bufferCursor = 0;
-}
+/*ISR(SPI_STC_vect) {
+	receiveData = SPDR;
+}*/
