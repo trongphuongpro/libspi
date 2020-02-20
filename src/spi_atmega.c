@@ -63,8 +63,7 @@ void spi_setClockDivider(uint8_t factor) {
 			case 4: case 16: case 64: case 128:	SPSR &= ~(1 << SPI2X);
 												break;
 
-			case 2: case 8: case 32:	SPSR &= ~(1 << SPI2X);
-										SPSR |= (1 << SPI2X);
+			case 2: case 8: case 32:	SPSR |= (1 << SPI2X);
 										break;								
 		}
 
@@ -80,8 +79,7 @@ void spi_setClockDivider(uint8_t factor) {
 								SPCR |= (2 << SPR0);
 								break;
 
-			case 128:	SPCR &= ~(3 << SPR0);
-						SPCR |= (3 << SPR0);
+			case 128:	SPCR |= (3 << SPR0);
 						break;
 		}
 	}
@@ -118,12 +116,12 @@ void spi_transmit_buffer(void *buffer, uint16_t len) {
 }
 
 
-void spi_write(uint8_t data) {
+void spi_send(uint8_t data) {
 	spi_transmit_byte(data);
 }
 
 
-void spi_writeBuffer(void *buffer, uint16_t len) {
+void spi_sendBuffer(void *buffer, uint16_t len) {
 	spi_transmit_buffer(buffer, len);
 }
 
@@ -141,7 +139,7 @@ uint8_t spi_slave_receive_byte(void) {
 }
 
 
-uint8_t spi_read() {
+uint8_t spi_receive() {
 	if (mode == MASTER)
 		return spi_master_receive_byte();
 	else
@@ -167,7 +165,7 @@ void spi_slave_receive_buffer(void *buffer, uint16_t n) {
 }
 
 
-void spi_readBuffer(void *buffer, uint16_t len) {
+void spi_receiveBuffer(void *buffer, uint16_t len) {
 	if (mode == MASTER)
 		return spi_master_receive_buffer(buffer, len);
 	else

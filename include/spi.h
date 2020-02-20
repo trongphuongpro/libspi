@@ -71,36 +71,36 @@ void spi_setClockDivider(uint8_t factor);
 
 
 /**
- * @brief Read 1 byte from SPI bus.
+ * @brief receive 1 byte from SPI bus.
  * @return one byte.
  */
-uint8_t spi_read(void);
+uint8_t spi_receive(void);
 
 
 /**
- * @brief Read 1 array from SPI bus.
+ * @brief receive 1 array from SPI bus.
  * @param buffer pointer to array.
  * @param len the length of data array.
  * @return nothing.
  */
-void spi_readBuffer(void *buffer, uint16_t len);
+void spi_receiveBuffer(void *buffer, uint16_t len);
 
 
 /**
- * @brief Write 1 byte to SPI bus.
+ * @brief send 1 byte to SPI bus.
  * @param data data that will be sent.
  * @return nothing.
  */
-void spi_write(uint8_t data);
+void spi_send(uint8_t data);
 
 
 /**
- * @brief Write 1 array to SPI bus.
+ * @brief send 1 array to SPI bus.
  * @param buffer pointer to array.
  * @param len the length of data array.
  * @return nothing.
  */
-void spi_writeBuffer(void *buffer, uint16_t len);
+void spi_sendBuffer(void *buffer, uint16_t len);
 
 
 #ifdef __cplusplus
