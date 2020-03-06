@@ -1,4 +1,4 @@
-/** 
+/* 
  * @file spi_atmega.c
  * @brief Implementation for SPI communication protocol
  * @author Nguyen Trong Phuong (aka trongphuongpro)
@@ -22,11 +22,8 @@ static SPI_DEVICEMODE mode;
 static void spi_master_open(void);
 static void spi_slave_open(void);
 static uint8_t spi_transmit_byte(uint8_t data);
-static void spi_transmit_buffer(void *buffer, uint16_t n);
 static uint8_t spi_master_receive_byte(void);
 static uint8_t spi_slave_receive_byte(void);
-static void spi_master_receive_buffer(void *buffer, uint16_t len);
-static void spi_slave_receive_buffer(void *buffer, uint16_t len);
 
 
 void spi_master_open(void) {
@@ -49,7 +46,7 @@ void spi_slave_open(void) {
 }
 
 
-void spi_open(SPI_DEVICEMODE mode) {
+void atmega_spi_open(SPI_DEVICEMODE mode) {
 	if (mode == MASTER)
 		spi_master_open();
 	else
@@ -57,7 +54,7 @@ void spi_open(SPI_DEVICEMODE mode) {
 }
 
 
-void spi_setClockDivider(uint8_t factor) {
+void spi_setPrescaler(uint8_t factor) {
 	if (mode == MASTER) {
 		switch (factor) {
 			case 4: case 16: case 64: case 128:	SPSR &= ~(1 << SPI2X);
@@ -107,25 +104,6 @@ uint8_t spi_transmit_byte(uint8_t data) {
 }
 
 
-void spi_transmit_buffer(void *buffer, uint16_t len) {
-	uint8_t *data = (uint8_t*)buffer;
-
-	for (uint16_t i = 0; i < len; i++) {
-		spi_transmit_byte(data[i]);
-	}
-}
-
-
-void spi_send(uint8_t data) {
-	spi_transmit_byte(data);
-}
-
-
-void spi_sendBuffer(void *buffer, uint16_t len) {
-	spi_transmit_buffer(buffer, len);
-}
-
-
 uint8_t spi_master_receive_byte(void) {
 	return spi_transmit_byte(0xFF);
 }
@@ -139,6 +117,20 @@ uint8_t spi_slave_receive_byte(void) {
 }
 
 
+void spi_send(uint8_t data) {
+	spi_transmit_byte(data);
+}
+
+
+void spi_sendBuffer(const void *buffer, uint16_t len) {
+	const uint8_t *data = (const uint8_t*)buffer;
+
+	for (uint16_t i = 0; i < len; i++) {
+		spi_send(data[i]);
+	}
+}
+
+
 uint8_t spi_receive() {
 	if (mode == MASTER)
 		return spi_master_receive_byte();
@@ -147,32 +139,17 @@ uint8_t spi_receive() {
 }
 
 
-void spi_master_receive_buffer(void *buffer, uint16_t n) {
-	uint8_t *data = (uint8_t*)buffer;
-
-	for (uint16_t i = 0; i < n; i++) {
-		data[i] = spi_master_receive_byte();
-	}
-}
-
-
-void spi_slave_receive_buffer(void *buffer, uint16_t n) {
-	uint8_t *data = (uint8_t*)buffer;
-
-	for (uint16_t i = 0; i < n; i++) {
-		data[i] = spi_slave_receive_byte();
-	}
-}
-
-
 void spi_receiveBuffer(void *buffer, uint16_t len) {
-	if (mode == MASTER)
-		return spi_master_receive_buffer(buffer, len);
-	else
-		return spi_slave_receive_buffer(buffer, len);
+	uint8_t *data = (uint8_t*)buffer;
+
+	for (uint16_t i = 0; i < len; i++) {
+		data[i] = spi_receive();
+	}
 }
 
 
 /*ISR(SPI_STC_vect) {
 	receiveData = SPDR;
 }*/
+
+/* End file */

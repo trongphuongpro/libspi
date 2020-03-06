@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: /home/trongphuong/Work/AVR/libraries/spi/include/spi.h File Reference</title>
+<title>My Project: /home/trongphuong/Work/BareMetal/libraries/spi/include/spi.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -75,7 +75,8 @@ $(function() {
 
 <p>Function prototypes for SPI communication protocol.  
 <a href="#details">More...</a></p>
-
+<div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+</div>
 <p><a href="spi_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
@@ -100,44 +101,47 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:acc9e89a7c26a104078ba5000999c9487"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spi_8h.html#acc9e89a7c26a104078ba5000999c9487">spi_open</a> (<a class="el" href="spi_8h.html#ad9440e7d07a96c3a7c2b30c4c2bfbe7d">SPI_DEVICEMODE</a> mode)</td></tr>
-<tr class="memdesc:acc9e89a7c26a104078ba5000999c9487"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize SPI bus.  <a href="spi_8h.html#acc9e89a7c26a104078ba5000999c9487">More...</a><br /></td></tr>
-<tr class="separator:acc9e89a7c26a104078ba5000999c9487"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac585877a381352afdc20e9c94e27eca1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spi_8h.html#ac585877a381352afdc20e9c94e27eca1">atmega_spi_open</a> (<a class="el" href="spi_8h.html#ad9440e7d07a96c3a7c2b30c4c2bfbe7d">SPI_DEVICEMODE</a> mode)</td></tr>
+<tr class="memdesc:ac585877a381352afdc20e9c94e27eca1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize SPI bus for ATmega.  <a href="spi_8h.html#ac585877a381352afdc20e9c94e27eca1">More...</a><br /></td></tr>
+<tr class="separator:ac585877a381352afdc20e9c94e27eca1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4bee8761a221ee4392435ca034d74ab8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spi_8h.html#a4bee8761a221ee4392435ca034d74ab8">tiva_spi_open</a> (uint32_t base, <a class="el" href="spi_8h.html#ad9440e7d07a96c3a7c2b30c4c2bfbe7d">SPI_DEVICEMODE</a> mode)</td></tr>
+<tr class="memdesc:a4bee8761a221ee4392435ca034d74ab8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize SPI bus for Tiva C.  <a href="spi_8h.html#a4bee8761a221ee4392435ca034d74ab8">More...</a><br /></td></tr>
+<tr class="separator:a4bee8761a221ee4392435ca034d74ab8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a67bf4b92c6d2afed583b600fcddbe026"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spi_8h.html#a67bf4b92c6d2afed583b600fcddbe026">spi_setBitOrder</a> (<a class="el" href="spi_8h.html#ad40168fafddddd88c8341bcc4b180605">SPI_BITORDER</a> order)</td></tr>
-<tr class="memdesc:a67bf4b92c6d2afed583b600fcddbe026"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set bit order for SPI transmitting.  <a href="spi_8h.html#a67bf4b92c6d2afed583b600fcddbe026">More...</a><br /></td></tr>
+<tr class="memdesc:a67bf4b92c6d2afed583b600fcddbe026"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set bit order for SPI transmitting. Only for ATmega.  <a href="spi_8h.html#a67bf4b92c6d2afed583b600fcddbe026">More...</a><br /></td></tr>
 <tr class="separator:a67bf4b92c6d2afed583b600fcddbe026"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4537718475a7e194e675b82d7799a020"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spi_8h.html#a4537718475a7e194e675b82d7799a020">spi_setDataMode</a> (<a class="el" href="spi_8h.html#acd20f31d4c33bbb9ba23879dcfb9d790">SPI_DATAMODE</a> mode)</td></tr>
-<tr class="memdesc:a4537718475a7e194e675b82d7799a020"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set data mode for SPI transmitting.  <a href="spi_8h.html#a4537718475a7e194e675b82d7799a020">More...</a><br /></td></tr>
+<tr class="memdesc:a4537718475a7e194e675b82d7799a020"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set data mode for SPI transmitting. Only for ATmega.  <a href="spi_8h.html#a4537718475a7e194e675b82d7799a020">More...</a><br /></td></tr>
 <tr class="separator:a4537718475a7e194e675b82d7799a020"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5f816c73562916e7766a8598b0e556e3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spi_8h.html#a5f816c73562916e7766a8598b0e556e3">spi_setClockDivider</a> (uint8_t factor)</td></tr>
-<tr class="memdesc:a5f816c73562916e7766a8598b0e556e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set clock rate divider.  <a href="spi_8h.html#a5f816c73562916e7766a8598b0e556e3">More...</a><br /></td></tr>
-<tr class="separator:a5f816c73562916e7766a8598b0e556e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a82a4ec3bb6d4bdaf7453f2ccc19b2243"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spi_8h.html#a82a4ec3bb6d4bdaf7453f2ccc19b2243">spi_read</a> (void)</td></tr>
-<tr class="memdesc:a82a4ec3bb6d4bdaf7453f2ccc19b2243"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read 1 byte from SPI bus.  <a href="spi_8h.html#a82a4ec3bb6d4bdaf7453f2ccc19b2243">More...</a><br /></td></tr>
-<tr class="separator:a82a4ec3bb6d4bdaf7453f2ccc19b2243"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad952008ed2dcb95c1917cf572b4553e5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spi_8h.html#ad952008ed2dcb95c1917cf572b4553e5">spi_readBuffer</a> (void *buffer, uint16_t len)</td></tr>
-<tr class="memdesc:ad952008ed2dcb95c1917cf572b4553e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read 1 array from SPI bus.  <a href="spi_8h.html#ad952008ed2dcb95c1917cf572b4553e5">More...</a><br /></td></tr>
-<tr class="separator:ad952008ed2dcb95c1917cf572b4553e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a656cafaeae25fbe893fb580a06360dba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spi_8h.html#a656cafaeae25fbe893fb580a06360dba">spi_write</a> (uint8_t data)</td></tr>
-<tr class="memdesc:a656cafaeae25fbe893fb580a06360dba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write 1 byte to SPI bus.  <a href="spi_8h.html#a656cafaeae25fbe893fb580a06360dba">More...</a><br /></td></tr>
-<tr class="separator:a656cafaeae25fbe893fb580a06360dba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adc456679022e4a421a3b27a65b527cf5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spi_8h.html#adc456679022e4a421a3b27a65b527cf5">spi_writeBuffer</a> (void *buffer, uint16_t len)</td></tr>
-<tr class="memdesc:adc456679022e4a421a3b27a65b527cf5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write 1 array to SPI bus.  <a href="spi_8h.html#adc456679022e4a421a3b27a65b527cf5">More...</a><br /></td></tr>
-<tr class="separator:adc456679022e4a421a3b27a65b527cf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96d28bd4eb6a08e71ff1ad4ee022bd75"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spi_8h.html#a96d28bd4eb6a08e71ff1ad4ee022bd75">spi_setPrescaler</a> (uint8_t factor)</td></tr>
+<tr class="memdesc:a96d28bd4eb6a08e71ff1ad4ee022bd75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set clock rate prescale. Only for ATmega.  <a href="spi_8h.html#a96d28bd4eb6a08e71ff1ad4ee022bd75">More...</a><br /></td></tr>
+<tr class="separator:a96d28bd4eb6a08e71ff1ad4ee022bd75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4af2e95faeed05ddaabe583534e42494"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spi_8h.html#a4af2e95faeed05ddaabe583534e42494">spi_receive</a> (void)</td></tr>
+<tr class="memdesc:a4af2e95faeed05ddaabe583534e42494"><td class="mdescLeft">&#160;</td><td class="mdescRight">receive 1 byte from SPI bus.  <a href="spi_8h.html#a4af2e95faeed05ddaabe583534e42494">More...</a><br /></td></tr>
+<tr class="separator:a4af2e95faeed05ddaabe583534e42494"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5da698634bf2747fcef51c9a5b72b3dc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spi_8h.html#a5da698634bf2747fcef51c9a5b72b3dc">spi_receiveBuffer</a> (void *buffer, uint16_t len)</td></tr>
+<tr class="memdesc:a5da698634bf2747fcef51c9a5b72b3dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">receive 1 array from SPI bus.  <a href="spi_8h.html#a5da698634bf2747fcef51c9a5b72b3dc">More...</a><br /></td></tr>
+<tr class="separator:a5da698634bf2747fcef51c9a5b72b3dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09e112d15b32e4c9e5cf1fd23ff33832"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spi_8h.html#a09e112d15b32e4c9e5cf1fd23ff33832">spi_send</a> (uint8_t data)</td></tr>
+<tr class="memdesc:a09e112d15b32e4c9e5cf1fd23ff33832"><td class="mdescLeft">&#160;</td><td class="mdescRight">send 1 byte to SPI bus.  <a href="spi_8h.html#a09e112d15b32e4c9e5cf1fd23ff33832">More...</a><br /></td></tr>
+<tr class="separator:a09e112d15b32e4c9e5cf1fd23ff33832"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2151a3a6d7b548ce67e7bc3e98f165a3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spi_8h.html#a2151a3a6d7b548ce67e7bc3e98f165a3">spi_sendBuffer</a> (const void *buffer, uint16_t len)</td></tr>
+<tr class="memdesc:a2151a3a6d7b548ce67e7bc3e98f165a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">send 1 array to SPI bus.  <a href="spi_8h.html#a2151a3a6d7b548ce67e7bc3e98f165a3">More...</a><br /></td></tr>
+<tr class="separator:a2151a3a6d7b548ce67e7bc3e98f165a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Function prototypes for SPI communication protocol. </p>
 <dl class="section author"><dt>Author</dt><dd>Nguyen Trong Phuong (aka trongphuongpro) </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2020 Jan 22 </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="acc9e89a7c26a104078ba5000999c9487"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acc9e89a7c26a104078ba5000999c9487">&#9670;&nbsp;</a></span>spi_open()</h2>
+<a id="ac585877a381352afdc20e9c94e27eca1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac585877a381352afdc20e9c94e27eca1">&#9670;&nbsp;</a></span>atmega_spi_open()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void spi_open </td>
+          <td class="memname">void atmega_spi_open </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="spi_8h.html#ad9440e7d07a96c3a7c2b30c4c2bfbe7d">SPI_DEVICEMODE</a>&#160;</td>
           <td class="paramname"><em>mode</em></td><td>)</td>
@@ -146,7 +150,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Initialize SPI bus. </p>
+<p>Initialize SPI bus for ATmega. </p>
 <p>Default: Master: data mode 0, MSB First. Slave: data mode 0, MSB First, transfer complete interrupt.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -158,14 +162,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a82a4ec3bb6d4bdaf7453f2ccc19b2243"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a82a4ec3bb6d4bdaf7453f2ccc19b2243">&#9670;&nbsp;</a></span>spi_read()</h2>
+<a id="a4af2e95faeed05ddaabe583534e42494"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4af2e95faeed05ddaabe583534e42494">&#9670;&nbsp;</a></span>spi_receive()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint8_t spi_read </td>
+          <td class="memname">uint8_t spi_receive </td>
           <td>(</td>
           <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -174,19 +178,19 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Read 1 byte from SPI bus. </p>
+<p>receive 1 byte from SPI bus. </p>
 <dl class="section return"><dt>Returns</dt><dd>one byte. </dd></dl>
 
 </div>
 </div>
-<a id="ad952008ed2dcb95c1917cf572b4553e5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad952008ed2dcb95c1917cf572b4553e5">&#9670;&nbsp;</a></span>spi_readBuffer()</h2>
+<a id="a5da698634bf2747fcef51c9a5b72b3dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5da698634bf2747fcef51c9a5b72b3dc">&#9670;&nbsp;</a></span>spi_receiveBuffer()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void spi_readBuffer </td>
+          <td class="memname">void spi_receiveBuffer </td>
           <td>(</td>
           <td class="paramtype">void *&#160;</td>
           <td class="paramname"><em>buffer</em>, </td>
@@ -205,7 +209,72 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Read 1 array from SPI bus. </p>
+<p>receive 1 array from SPI bus. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buffer</td><td>pointer to array. </td></tr>
+    <tr><td class="paramname">len</td><td>the length of data array. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>nothing. </dd></dl>
+
+</div>
+</div>
+<a id="a09e112d15b32e4c9e5cf1fd23ff33832"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09e112d15b32e4c9e5cf1fd23ff33832">&#9670;&nbsp;</a></span>spi_send()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void spi_send </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>data</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>send 1 byte to SPI bus. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>data that will be sent. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>nothing. </dd></dl>
+
+</div>
+</div>
+<a id="a2151a3a6d7b548ce67e7bc3e98f165a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2151a3a6d7b548ce67e7bc3e98f165a3">&#9670;&nbsp;</a></span>spi_sendBuffer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void spi_sendBuffer </td>
+          <td>(</td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>send 1 array to SPI bus. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">buffer</td><td>pointer to array. </td></tr>
@@ -233,38 +302,10 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Set bit order for SPI transmitting. </p>
+<p>Set bit order for SPI transmitting. Only for ATmega. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">order</td><td>MSB or LSB. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>nothing. </dd></dl>
-
-</div>
-</div>
-<a id="a5f816c73562916e7766a8598b0e556e3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5f816c73562916e7766a8598b0e556e3">&#9670;&nbsp;</a></span>spi_setClockDivider()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void spi_setClockDivider </td>
-          <td>(</td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>factor</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Set clock rate divider. </p>
-<p>Transmitting speed = MCU's speed / factor.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">factor</td><td>2,4,8,16,32,64,128. </td></tr>
   </table>
   </dd>
 </dl>
@@ -288,7 +329,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Set data mode for SPI transmitting. </p>
+<p>Set data mode for SPI transmitting. Only for ATmega. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">mode</td><td>MODE0, MODE1, MODE2 or MODE3. </td></tr>
@@ -299,26 +340,27 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a656cafaeae25fbe893fb580a06360dba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a656cafaeae25fbe893fb580a06360dba">&#9670;&nbsp;</a></span>spi_write()</h2>
+<a id="a96d28bd4eb6a08e71ff1ad4ee022bd75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96d28bd4eb6a08e71ff1ad4ee022bd75">&#9670;&nbsp;</a></span>spi_setPrescaler()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void spi_write </td>
+          <td class="memname">void spi_setPrescaler </td>
           <td>(</td>
           <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>data</em></td><td>)</td>
+          <td class="paramname"><em>factor</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Write 1 byte to SPI bus. </p>
+<p>Set clock rate prescale. Only for ATmega. </p>
+<p>Transmitting speed = MCU's speed / factor.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">data</td><td>data that will be sent. </td></tr>
+    <tr><td class="paramname">factor</td><td>2,4,8,16,32,64,128. </td></tr>
   </table>
   </dd>
 </dl>
@@ -326,23 +368,23 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="adc456679022e4a421a3b27a65b527cf5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adc456679022e4a421a3b27a65b527cf5">&#9670;&nbsp;</a></span>spi_writeBuffer()</h2>
+<a id="a4bee8761a221ee4392435ca034d74ab8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4bee8761a221ee4392435ca034d74ab8">&#9670;&nbsp;</a></span>tiva_spi_open()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void spi_writeBuffer </td>
+          <td class="memname">void tiva_spi_open </td>
           <td>(</td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>buffer</em>, </td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>base</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">uint16_t&#160;</td>
-          <td class="paramname"><em>len</em>&#160;</td>
+          <td class="paramtype"><a class="el" href="spi_8h.html#ad9440e7d07a96c3a7c2b30c4c2bfbe7d">SPI_DEVICEMODE</a>&#160;</td>
+          <td class="paramname"><em>mode</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -352,11 +394,11 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Write 1 array to SPI bus. </p>
+<p>Initialize SPI bus for Tiva C. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">buffer</td><td>pointer to array. </td></tr>
-    <tr><td class="paramname">len</td><td>the length of data array. </td></tr>
+    <tr><td class="paramname">base</td><td>Memory base of Tiva C SSI module. </td></tr>
+    <tr><td class="paramname">mode</td><td>MASTER or SLAVE. </td></tr>
   </table>
   </dd>
 </dl>

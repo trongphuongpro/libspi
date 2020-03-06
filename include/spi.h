@@ -12,6 +12,9 @@
 extern "C" {
 #endif
 
+
+#include <stdint.h>
+
 /**
  * @brief Device mode: Master or Slave
  */
@@ -31,7 +34,7 @@ typedef enum {MSB=0, LSB} SPI_BITORDER;
 
 
 /**
- * @brief Initialize SPI bus.
+ * @brief Initialize SPI bus for ATmega
  *
  * Default:
  * Master: data mode 0, MSB First.
@@ -40,11 +43,22 @@ typedef enum {MSB=0, LSB} SPI_BITORDER;
  * @param mode MASTER or SLAVE.
  * @return nothing.
  */
-void spi_open(SPI_DEVICEMODE mode);
+void atmega_spi_open(SPI_DEVICEMODE mode);
+
+
+/**
+ * @brief Initialize SPI bus for Tiva C.
+ *
+ * @param base Memory base of Tiva C SSI module.
+ * @param mode MASTER or SLAVE.
+ * @return nothing.
+ */
+void tiva_spi_open(uint32_t base, SPI_DEVICEMODE mode);
 
 
 /**
  * @brief Set bit order for SPI transmitting.
+ * Only for ATmega.
  * @param order MSB or LSB.
  * @return nothing.
  */
@@ -53,6 +67,7 @@ void spi_setBitOrder(SPI_BITORDER order);
 
 /**
  * @brief Set data mode for SPI transmitting.
+ * Only for ATmega.
  * @param mode MODE0, MODE1, MODE2 or MODE3.
  * @return nothing.
  */
@@ -60,18 +75,18 @@ void spi_setDataMode(SPI_DATAMODE mode);
 
 
 /**
- * @brief Set clock rate divider.
+ * @brief Set clock rate prescale. Only for ATmega.
  * 
  * Transmitting speed = MCU's speed / factor.
  * 
  * @param factor 2,4,8,16,32,64,128.
  * @return nothing.
  */
-void spi_setClockDivider(uint8_t factor);
+void spi_setPrescaler(uint8_t factor);
 
 
 /**
- * @brief receive 1 byte from SPI bus.
+ * @brief receive 1 byte from SPI bus. 
  * @return one byte.
  */
 uint8_t spi_receive(void);
@@ -100,7 +115,7 @@ void spi_send(uint8_t data);
  * @param len the length of data array.
  * @return nothing.
  */
-void spi_sendBuffer(void *buffer, uint16_t len);
+void spi_sendBuffer(const void *buffer, uint16_t len);
 
 
 #ifdef __cplusplus
