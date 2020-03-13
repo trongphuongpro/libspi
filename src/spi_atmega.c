@@ -95,7 +95,7 @@ void spi_setDataMode(SPI_DATAMODE mode) {
 }
 
 
-uint8_t spi_transmit_byte(uint8_t data) {
+uint8_t spi_transfer_byte(uint8_t data) {
 	SPDR = data;
 	while (!(SPSR & (1 << SPIF))) {
 		// wait for flag interrupt
@@ -105,7 +105,7 @@ uint8_t spi_transmit_byte(uint8_t data) {
 
 
 uint8_t spi_master_receive_byte(void) {
-	return spi_transmit_byte(0xFF);
+	return spi_transfer_byte(0xFF);
 }
 
 
@@ -118,7 +118,7 @@ uint8_t spi_slave_receive_byte(void) {
 
 
 void spi_send(uint8_t data) {
-	spi_transmit_byte(data);
+	spi_transfer_byte(data);
 }
 
 
