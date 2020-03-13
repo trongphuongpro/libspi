@@ -128,6 +128,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a2151a3a6d7b548ce67e7bc3e98f165a3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spi_8h.html#a2151a3a6d7b548ce67e7bc3e98f165a3">spi_sendBuffer</a> (const void *buffer, uint16_t len)</td></tr>
 <tr class="memdesc:a2151a3a6d7b548ce67e7bc3e98f165a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">send 1 array to SPI bus.  <a href="spi_8h.html#a2151a3a6d7b548ce67e7bc3e98f165a3">More...</a><br /></td></tr>
 <tr class="separator:a2151a3a6d7b548ce67e7bc3e98f165a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89a4a555f7919217878c9237f81812ab"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spi_8h.html#a89a4a555f7919217878c9237f81812ab">spi_transfer_byte</a> (uint8_t data)</td></tr>
+<tr class="memdesc:a89a4a555f7919217878c9237f81812ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">shift 1 byte to SPI bus.  <a href="spi_8h.html#a89a4a555f7919217878c9237f81812ab">More...</a><br /></td></tr>
+<tr class="separator:a89a4a555f7919217878c9237f81812ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Function prototypes for SPI communication protocol. </p>
@@ -365,6 +368,33 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>nothing. </dd></dl>
+
+</div>
+</div>
+<a id="a89a4a555f7919217878c9237f81812ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89a4a555f7919217878c9237f81812ab">&#9670;&nbsp;</a></span>spi_transfer_byte()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t spi_transfer_byte </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>data</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>shift 1 byte to SPI bus. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>1-byte data will be shifted out. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>1-byte data will be shifted in. </dd></dl>
 
 </div>
 </div>

@@ -118,6 +118,11 @@ void spi_send(uint8_t data);
 void spi_sendBuffer(const void *buffer, uint16_t len);
 
 
+/**
+ * @brief shift 1 byte to SPI bus.
+ * @param data 1-byte data will be shifted out.
+ * @return 1-byte data will be shifted in.
+ */
 uint8_t spi_transfer_byte(uint8_t data);
 
 #ifdef __cplusplus

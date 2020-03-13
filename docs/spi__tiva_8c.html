@@ -83,18 +83,21 @@ Functions</h2></td></tr>
 <tr class="memitem:a7cc32e15a56618989e49e1403ddb8f5c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spi__tiva_8c.html#a7cc32e15a56618989e49e1403ddb8f5c">tiva_spi_open</a> (uint32_t base, <a class="el" href="spi_8h.html#ad9440e7d07a96c3a7c2b30c4c2bfbe7d">SPI_DEVICEMODE</a> __mode)</td></tr>
 <tr class="memdesc:a7cc32e15a56618989e49e1403ddb8f5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize SPI bus for Tiva C.  <a href="spi__tiva_8c.html#a7cc32e15a56618989e49e1403ddb8f5c">More...</a><br /></td></tr>
 <tr class="separator:a7cc32e15a56618989e49e1403ddb8f5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeb3124702a065d646cd11ce1b79337fe"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spi__tiva_8c.html#aeb3124702a065d646cd11ce1b79337fe">spi_receive</a> ()</td></tr>
-<tr class="memdesc:aeb3124702a065d646cd11ce1b79337fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">receive 1 byte from SPI bus.  <a href="spi__tiva_8c.html#aeb3124702a065d646cd11ce1b79337fe">More...</a><br /></td></tr>
-<tr class="separator:aeb3124702a065d646cd11ce1b79337fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5da698634bf2747fcef51c9a5b72b3dc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spi__tiva_8c.html#a5da698634bf2747fcef51c9a5b72b3dc">spi_receiveBuffer</a> (void *buffer, uint16_t len)</td></tr>
-<tr class="memdesc:a5da698634bf2747fcef51c9a5b72b3dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">receive 1 array from SPI bus.  <a href="spi__tiva_8c.html#a5da698634bf2747fcef51c9a5b72b3dc">More...</a><br /></td></tr>
-<tr class="separator:a5da698634bf2747fcef51c9a5b72b3dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89a4a555f7919217878c9237f81812ab"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spi__tiva_8c.html#a89a4a555f7919217878c9237f81812ab">spi_transfer_byte</a> (uint8_t data)</td></tr>
+<tr class="memdesc:a89a4a555f7919217878c9237f81812ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">shift 1 byte to SPI bus.  <a href="spi__tiva_8c.html#a89a4a555f7919217878c9237f81812ab">More...</a><br /></td></tr>
+<tr class="separator:a89a4a555f7919217878c9237f81812ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a09e112d15b32e4c9e5cf1fd23ff33832"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spi__tiva_8c.html#a09e112d15b32e4c9e5cf1fd23ff33832">spi_send</a> (uint8_t data)</td></tr>
 <tr class="memdesc:a09e112d15b32e4c9e5cf1fd23ff33832"><td class="mdescLeft">&#160;</td><td class="mdescRight">send 1 byte to SPI bus.  <a href="spi__tiva_8c.html#a09e112d15b32e4c9e5cf1fd23ff33832">More...</a><br /></td></tr>
 <tr class="separator:a09e112d15b32e4c9e5cf1fd23ff33832"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2151a3a6d7b548ce67e7bc3e98f165a3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spi__tiva_8c.html#a2151a3a6d7b548ce67e7bc3e98f165a3">spi_sendBuffer</a> (const void *buffer, uint16_t len)</td></tr>
 <tr class="memdesc:a2151a3a6d7b548ce67e7bc3e98f165a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">send 1 array to SPI bus.  <a href="spi__tiva_8c.html#a2151a3a6d7b548ce67e7bc3e98f165a3">More...</a><br /></td></tr>
 <tr class="separator:a2151a3a6d7b548ce67e7bc3e98f165a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb3124702a065d646cd11ce1b79337fe"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spi__tiva_8c.html#aeb3124702a065d646cd11ce1b79337fe">spi_receive</a> ()</td></tr>
+<tr class="memdesc:aeb3124702a065d646cd11ce1b79337fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">receive 1 byte from SPI bus.  <a href="spi__tiva_8c.html#aeb3124702a065d646cd11ce1b79337fe">More...</a><br /></td></tr>
+<tr class="separator:aeb3124702a065d646cd11ce1b79337fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5da698634bf2747fcef51c9a5b72b3dc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spi__tiva_8c.html#a5da698634bf2747fcef51c9a5b72b3dc">spi_receiveBuffer</a> (void *buffer, uint16_t len)</td></tr>
+<tr class="memdesc:a5da698634bf2747fcef51c9a5b72b3dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">receive 1 array from SPI bus.  <a href="spi__tiva_8c.html#a5da698634bf2747fcef51c9a5b72b3dc">More...</a><br /></td></tr>
+<tr class="separator:a5da698634bf2747fcef51c9a5b72b3dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Wrapper for SPI communication protocol of Tiva C. </p>
@@ -222,6 +225,33 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>nothing. </dd></dl>
+
+</div>
+</div>
+<a id="a89a4a555f7919217878c9237f81812ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89a4a555f7919217878c9237f81812ab">&#9670;&nbsp;</a></span>spi_transfer_byte()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t spi_transfer_byte </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>data</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>shift 1 byte to SPI bus. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>1-byte data will be shifted out. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>1-byte data will be shifted in. </dd></dl>
 
 </div>
 </div>

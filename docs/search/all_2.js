@@ -11,5 +11,6 @@ var searchData=
   ['spi_5fsetbitorder_10',['spi_setBitOrder',['../spi_8h.html#a67bf4b92c6d2afed583b600fcddbe026',1,'spi_atmega.c']]],
   ['spi_5fsetdatamode_11',['spi_setDataMode',['../spi_8h.html#a4537718475a7e194e675b82d7799a020',1,'spi_atmega.c']]],
   ['spi_5fsetprescaler_12',['spi_setPrescaler',['../spi_8h.html#a96d28bd4eb6a08e71ff1ad4ee022bd75',1,'spi_atmega.c']]],
-  ['spi_5ftiva_2ec_13',['spi_tiva.c',['../spi__tiva_8c.html',1,'']]]
+  ['spi_5ftiva_2ec_13',['spi_tiva.c',['../spi__tiva_8c.html',1,'']]],
+  ['spi_5ftransfer_5fbyte_14',['spi_transfer_byte',['../spi_8h.html#a89a4a555f7919217878c9237f81812ab',1,'spi_transfer_byte(uint8_t data):&#160;spi_atmega.c'],['../spi__tiva_8c.html#a89a4a555f7919217878c9237f81812ab',1,'spi_transfer_byte(uint8_t data):&#160;spi_tiva.c']]]
 ];
