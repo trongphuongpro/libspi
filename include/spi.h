@@ -15,6 +15,16 @@ extern "C" {
 
 #include <stdint.h>
 
+
+#define ATMEGA_SPI_PORT PORTB
+#define ATMEGA_SPI_DDR  DDRB
+
+#define ATMEGA_MOSI 3
+#define ATMEGA_MISO 4
+#define ATMEGA_SCK  5
+#define ATMEGA_SS   2
+
+
 /**
  * @brief Device mode: Master or Slave
  */
@@ -130,3 +140,5 @@ uint8_t spi_transfer_byte(uint8_t data);
 #endif
 
 #endif /* __SPI__ */
+
+/**************************** End of File ************************************/
