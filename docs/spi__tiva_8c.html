@@ -76,15 +76,19 @@ $(function() {
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="spi_8h_source.html">spi.h</a>&quot;</code><br />
 <code>#include &lt;stdbool.h&gt;</code><br />
+<code>#include &quot;driverlib/sysctl.h&quot;</code><br />
 <code>#include &quot;driverlib/ssi.h&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a7cc32e15a56618989e49e1403ddb8f5c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spi__tiva_8c.html#a7cc32e15a56618989e49e1403ddb8f5c">tiva_spi_open</a> (uint32_t base, <a class="el" href="spi_8h.html#ad9440e7d07a96c3a7c2b30c4c2bfbe7d">SPI_DEVICEMODE</a> __mode)</td></tr>
-<tr class="memdesc:a7cc32e15a56618989e49e1403ddb8f5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize SPI bus for Tiva C.  <a href="spi__tiva_8c.html#a7cc32e15a56618989e49e1403ddb8f5c">More...</a><br /></td></tr>
-<tr class="separator:a7cc32e15a56618989e49e1403ddb8f5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a204d899a66db5bbcec397468fe7dc2ac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spi__tiva_8c.html#a204d899a66db5bbcec397468fe7dc2ac">tiva_spi_master_init</a> (uint32_t base, uint32_t data_mode, uint32_t speed, uint8_t data_width)</td></tr>
+<tr class="memdesc:a204d899a66db5bbcec397468fe7dc2ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize SPI Master bus for Tiva C.  <a href="spi__tiva_8c.html#a204d899a66db5bbcec397468fe7dc2ac">More...</a><br /></td></tr>
+<tr class="separator:a204d899a66db5bbcec397468fe7dc2ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59283e6a513726af10fbe418bd197a62"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spi__tiva_8c.html#a59283e6a513726af10fbe418bd197a62">tiva_spi_slave_init</a> (uint32_t base, uint32_t data_mode, uint8_t data_width)</td></tr>
+<tr class="memdesc:a59283e6a513726af10fbe418bd197a62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize SPI Slave bus for Tiva C.  <a href="spi__tiva_8c.html#a59283e6a513726af10fbe418bd197a62">More...</a><br /></td></tr>
+<tr class="separator:a59283e6a513726af10fbe418bd197a62"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a89a4a555f7919217878c9237f81812ab"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spi__tiva_8c.html#a89a4a555f7919217878c9237f81812ab">spi_transfer_byte</a> (uint8_t data)</td></tr>
-<tr class="memdesc:a89a4a555f7919217878c9237f81812ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">shift 1 byte to SPI bus.  <a href="spi__tiva_8c.html#a89a4a555f7919217878c9237f81812ab">More...</a><br /></td></tr>
+<tr class="memdesc:a89a4a555f7919217878c9237f81812ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">transfer 1 byte to SPI bus.  <a href="spi__tiva_8c.html#a89a4a555f7919217878c9237f81812ab">More...</a><br /></td></tr>
 <tr class="separator:a89a4a555f7919217878c9237f81812ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a09e112d15b32e4c9e5cf1fd23ff33832"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spi__tiva_8c.html#a09e112d15b32e4c9e5cf1fd23ff33832">spi_send</a> (uint8_t data)</td></tr>
 <tr class="memdesc:a09e112d15b32e4c9e5cf1fd23ff33832"><td class="mdescLeft">&#160;</td><td class="mdescRight">send 1 byte to SPI bus.  <a href="spi__tiva_8c.html#a09e112d15b32e4c9e5cf1fd23ff33832">More...</a><br /></td></tr>
@@ -244,25 +248,25 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>shift 1 byte to SPI bus. </p>
+<p>transfer 1 byte to SPI bus. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">data</td><td>1-byte data will be shifted out. </td></tr>
+    <tr><td class="paramname">data</td><td>1-byte data. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>1-byte data will be shifted in. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>1-byte received data. </dd></dl>
 
 </div>
 </div>
-<a id="a7cc32e15a56618989e49e1403ddb8f5c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7cc32e15a56618989e49e1403ddb8f5c">&#9670;&nbsp;</a></span>tiva_spi_open()</h2>
+<a id="a204d899a66db5bbcec397468fe7dc2ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a204d899a66db5bbcec397468fe7dc2ac">&#9670;&nbsp;</a></span>tiva_spi_master_init()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void tiva_spi_open </td>
+          <td class="memname">void tiva_spi_master_init </td>
           <td>(</td>
           <td class="paramtype">uint32_t&#160;</td>
           <td class="paramname"><em>base</em>, </td>
@@ -270,8 +274,20 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="spi_8h.html#ad9440e7d07a96c3a7c2b30c4c2bfbe7d">SPI_DEVICEMODE</a>&#160;</td>
-          <td class="paramname"><em>mode</em>&#160;</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>data_mode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>speed</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>data_width</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -281,11 +297,58 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Initialize SPI bus for Tiva C. </p>
+<p>Initialize SPI Master bus for Tiva C. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">base</td><td>Memory base of Tiva C SSI module. </td></tr>
-    <tr><td class="paramname">mode</td><td>MASTER or SLAVE. </td></tr>
+    <tr><td class="paramname">data_mode</td><td>TIVA_SPI_MODE[0,1,2 or 3]. </td></tr>
+    <tr><td class="paramname">speed</td><td>should be lower than FSSI/2. </td></tr>
+    <tr><td class="paramname">data_width</td><td>from 4 to 16 bits. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>nothing. </dd></dl>
+
+</div>
+</div>
+<a id="a59283e6a513726af10fbe418bd197a62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59283e6a513726af10fbe418bd197a62">&#9670;&nbsp;</a></span>tiva_spi_slave_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void tiva_spi_slave_init </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>base</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>data_mode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>data_width</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialize SPI Slave bus for Tiva C. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">base</td><td>Memory base of Tiva C SSI module. </td></tr>
+    <tr><td class="paramname">data_mode</td><td>TIVA_SPI_MODE[0,1,2 or 3]. </td></tr>
+    <tr><td class="paramname">data_width</td><td>from 4 to 16 bits. </td></tr>
   </table>
   </dd>
 </dl>

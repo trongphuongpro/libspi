@@ -74,25 +74,28 @@ $(function() {
 
 <p>Implementation for SPI communication protocol.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;avr/io.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="spi_8h_source.html">spi.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="spi_8h_source.html">spi.h</a>&quot;</code><br />
+<code>#include &lt;avr/io.h&gt;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ac585877a381352afdc20e9c94e27eca1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spi__atmega_8c.html#ac585877a381352afdc20e9c94e27eca1">atmega_spi_open</a> (<a class="el" href="spi_8h.html#ad9440e7d07a96c3a7c2b30c4c2bfbe7d">SPI_DEVICEMODE</a> mode)</td></tr>
-<tr class="memdesc:ac585877a381352afdc20e9c94e27eca1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize SPI bus for ATmega.  <a href="spi__atmega_8c.html#ac585877a381352afdc20e9c94e27eca1">More...</a><br /></td></tr>
-<tr class="separator:ac585877a381352afdc20e9c94e27eca1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a96d28bd4eb6a08e71ff1ad4ee022bd75"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spi__atmega_8c.html#a96d28bd4eb6a08e71ff1ad4ee022bd75">spi_setPrescaler</a> (uint8_t factor)</td></tr>
-<tr class="memdesc:a96d28bd4eb6a08e71ff1ad4ee022bd75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set clock rate prescale. Only for ATmega.  <a href="spi__atmega_8c.html#a96d28bd4eb6a08e71ff1ad4ee022bd75">More...</a><br /></td></tr>
-<tr class="separator:a96d28bd4eb6a08e71ff1ad4ee022bd75"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a67bf4b92c6d2afed583b600fcddbe026"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spi__atmega_8c.html#a67bf4b92c6d2afed583b600fcddbe026">spi_setBitOrder</a> (<a class="el" href="spi_8h.html#ad40168fafddddd88c8341bcc4b180605">SPI_BITORDER</a> order)</td></tr>
-<tr class="memdesc:a67bf4b92c6d2afed583b600fcddbe026"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set bit order for SPI transmitting. Only for ATmega.  <a href="spi__atmega_8c.html#a67bf4b92c6d2afed583b600fcddbe026">More...</a><br /></td></tr>
-<tr class="separator:a67bf4b92c6d2afed583b600fcddbe026"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4537718475a7e194e675b82d7799a020"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spi__atmega_8c.html#a4537718475a7e194e675b82d7799a020">spi_setDataMode</a> (<a class="el" href="spi_8h.html#acd20f31d4c33bbb9ba23879dcfb9d790">SPI_DATAMODE</a> mode)</td></tr>
-<tr class="memdesc:a4537718475a7e194e675b82d7799a020"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set data mode for SPI transmitting. Only for ATmega.  <a href="spi__atmega_8c.html#a4537718475a7e194e675b82d7799a020">More...</a><br /></td></tr>
-<tr class="separator:a4537718475a7e194e675b82d7799a020"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11f26dbd508bdecd1b39b91ebb36491b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spi__atmega_8c.html#a11f26dbd508bdecd1b39b91ebb36491b">atmega_spi_master_init</a> (uint8_t data_mode, uint8_t prescale)</td></tr>
+<tr class="memdesc:a11f26dbd508bdecd1b39b91ebb36491b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize SPI Master bus for ATmega.  <a href="spi__atmega_8c.html#a11f26dbd508bdecd1b39b91ebb36491b">More...</a><br /></td></tr>
+<tr class="separator:a11f26dbd508bdecd1b39b91ebb36491b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a153a1d968de936cbc5dd10644b174934"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spi__atmega_8c.html#a153a1d968de936cbc5dd10644b174934">atmega_spi_slave_init</a> (uint8_t data_mode)</td></tr>
+<tr class="memdesc:a153a1d968de936cbc5dd10644b174934"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize SPI Master bus for Tiva C.  <a href="spi__atmega_8c.html#a153a1d968de936cbc5dd10644b174934">More...</a><br /></td></tr>
+<tr class="separator:a153a1d968de936cbc5dd10644b174934"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2d0ca34e5e48ca96e0cf155ac7b8444"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spi__atmega_8c.html#ac2d0ca34e5e48ca96e0cf155ac7b8444">atmega_spi_setPrescaler</a> (uint8_t factor)</td></tr>
+<tr class="memdesc:ac2d0ca34e5e48ca96e0cf155ac7b8444"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set clock rate prescale. Only for ATmega.  <a href="spi__atmega_8c.html#ac2d0ca34e5e48ca96e0cf155ac7b8444">More...</a><br /></td></tr>
+<tr class="separator:ac2d0ca34e5e48ca96e0cf155ac7b8444"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaea909b77526a4362a8feff6c6a6a6c8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spi__atmega_8c.html#aaea909b77526a4362a8feff6c6a6a6c8">atmega_spi_setBitOrder</a> (uint8_t order)</td></tr>
+<tr class="memdesc:aaea909b77526a4362a8feff6c6a6a6c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set bit order for SPI transferting. Only for ATmega.  <a href="spi__atmega_8c.html#aaea909b77526a4362a8feff6c6a6a6c8">More...</a><br /></td></tr>
+<tr class="separator:aaea909b77526a4362a8feff6c6a6a6c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22bb89062a79e8619a222162256437ed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spi__atmega_8c.html#a22bb89062a79e8619a222162256437ed">atmega_spi_setDataMode</a> (uint8_t mode)</td></tr>
+<tr class="memdesc:a22bb89062a79e8619a222162256437ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set data mode for SPI transferting. Only for ATmega.  <a href="spi__atmega_8c.html#a22bb89062a79e8619a222162256437ed">More...</a><br /></td></tr>
+<tr class="separator:a22bb89062a79e8619a222162256437ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a89a4a555f7919217878c9237f81812ab"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spi__atmega_8c.html#a89a4a555f7919217878c9237f81812ab">spi_transfer_byte</a> (uint8_t data)</td></tr>
-<tr class="memdesc:a89a4a555f7919217878c9237f81812ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">shift 1 byte to SPI bus.  <a href="spi__atmega_8c.html#a89a4a555f7919217878c9237f81812ab">More...</a><br /></td></tr>
+<tr class="memdesc:a89a4a555f7919217878c9237f81812ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">transfer 1 byte to SPI bus.  <a href="spi__atmega_8c.html#a89a4a555f7919217878c9237f81812ab">More...</a><br /></td></tr>
 <tr class="separator:a89a4a555f7919217878c9237f81812ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a09e112d15b32e4c9e5cf1fd23ff33832"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spi__atmega_8c.html#a09e112d15b32e4c9e5cf1fd23ff33832">spi_send</a> (uint8_t data)</td></tr>
 <tr class="memdesc:a09e112d15b32e4c9e5cf1fd23ff33832"><td class="mdescLeft">&#160;</td><td class="mdescRight">send 1 byte to SPI bus.  <a href="spi__atmega_8c.html#a09e112d15b32e4c9e5cf1fd23ff33832">More...</a><br /></td></tr>
@@ -112,31 +115,150 @@ Functions</h2></td></tr>
 <dl class="section author"><dt>Author</dt><dd>Nguyen Trong Phuong (aka trongphuongpro) </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2020 Jan 22 </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="ac585877a381352afdc20e9c94e27eca1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac585877a381352afdc20e9c94e27eca1">&#9670;&nbsp;</a></span>atmega_spi_open()</h2>
+<a id="a11f26dbd508bdecd1b39b91ebb36491b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11f26dbd508bdecd1b39b91ebb36491b">&#9670;&nbsp;</a></span>atmega_spi_master_init()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void atmega_spi_open </td>
+          <td class="memname">void atmega_spi_master_init </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="spi_8h.html#ad9440e7d07a96c3a7c2b30c4c2bfbe7d">SPI_DEVICEMODE</a>&#160;</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>data_mode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>prescale</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialize SPI Master bus for ATmega. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data_mode</td><td>TIVA_SPI_MODE[0,1,2 or 3]. </td></tr>
+    <tr><td class="paramname">prescale</td><td>from 2 to 128, see datasheet. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>nothing. Default: MSB First </dd></dl>
+
+</div>
+</div>
+<a id="aaea909b77526a4362a8feff6c6a6a6c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaea909b77526a4362a8feff6c6a6a6c8">&#9670;&nbsp;</a></span>atmega_spi_setBitOrder()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void atmega_spi_setBitOrder </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>order</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set bit order for SPI transferting. Only for ATmega. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">order</td><td>MSB or LSB. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>nothing. </dd></dl>
+
+</div>
+</div>
+<a id="a22bb89062a79e8619a222162256437ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22bb89062a79e8619a222162256437ed">&#9670;&nbsp;</a></span>atmega_spi_setDataMode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void atmega_spi_setDataMode </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
           <td class="paramname"><em>mode</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Initialize SPI bus for ATmega. </p>
-<p>Default: Master: data mode 0, MSB First. Slave: data mode 0, MSB First, transfer complete interrupt.</p>
+<p>Set data mode for SPI transferting. Only for ATmega. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">mode</td><td>MASTER or SLAVE. </td></tr>
+    <tr><td class="paramname">mode</td><td>MODE0, MODE1, MODE2 or MODE3. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>nothing. </dd></dl>
+
+</div>
+</div>
+<a id="ac2d0ca34e5e48ca96e0cf155ac7b8444"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2d0ca34e5e48ca96e0cf155ac7b8444">&#9670;&nbsp;</a></span>atmega_spi_setPrescaler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void atmega_spi_setPrescaler </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>factor</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set clock rate prescale. Only for ATmega. </p>
+<p>Transmitting speed = MCU's speed / factor.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">factor</td><td>2,4,8,16,32,64,128. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>nothing. </dd></dl>
+
+</div>
+</div>
+<a id="a153a1d968de936cbc5dd10644b174934"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a153a1d968de936cbc5dd10644b174934">&#9670;&nbsp;</a></span>atmega_spi_slave_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void atmega_spi_slave_init </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>data_mode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialize SPI Master bus for Tiva C. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data_mode</td><td>TIVA_SPI_MODE[0,1,2 or 3]. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>nothing. Default: MSB First </dd></dl>
 
 </div>
 </div>
@@ -264,88 +386,6 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a67bf4b92c6d2afed583b600fcddbe026"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a67bf4b92c6d2afed583b600fcddbe026">&#9670;&nbsp;</a></span>spi_setBitOrder()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void spi_setBitOrder </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="spi_8h.html#ad40168fafddddd88c8341bcc4b180605">SPI_BITORDER</a>&#160;</td>
-          <td class="paramname"><em>order</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Set bit order for SPI transmitting. Only for ATmega. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">order</td><td>MSB or LSB. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>nothing. </dd></dl>
-
-</div>
-</div>
-<a id="a4537718475a7e194e675b82d7799a020"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4537718475a7e194e675b82d7799a020">&#9670;&nbsp;</a></span>spi_setDataMode()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void spi_setDataMode </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="spi_8h.html#acd20f31d4c33bbb9ba23879dcfb9d790">SPI_DATAMODE</a>&#160;</td>
-          <td class="paramname"><em>mode</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Set data mode for SPI transmitting. Only for ATmega. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">mode</td><td>MODE0, MODE1, MODE2 or MODE3. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>nothing. </dd></dl>
-
-</div>
-</div>
-<a id="a96d28bd4eb6a08e71ff1ad4ee022bd75"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a96d28bd4eb6a08e71ff1ad4ee022bd75">&#9670;&nbsp;</a></span>spi_setPrescaler()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void spi_setPrescaler </td>
-          <td>(</td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>factor</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Set clock rate prescale. Only for ATmega. </p>
-<p>Transmitting speed = MCU's speed / factor.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">factor</td><td>2,4,8,16,32,64,128. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>nothing. </dd></dl>
-
-</div>
-</div>
 <a id="a89a4a555f7919217878c9237f81812ab"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a89a4a555f7919217878c9237f81812ab">&#9670;&nbsp;</a></span>spi_transfer_byte()</h2>
 
@@ -362,14 +402,14 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>shift 1 byte to SPI bus. </p>
+<p>transfer 1 byte to SPI bus. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">data</td><td>1-byte data will be shifted out. </td></tr>
+    <tr><td class="paramname">data</td><td>1-byte data. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>1-byte data will be shifted in. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>1-byte received data. </dd></dl>
 
 </div>
 </div>

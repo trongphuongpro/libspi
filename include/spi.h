@@ -14,74 +14,99 @@ extern "C" {
 
 
 #include <stdint.h>
+#include <stdbool.h>
 
 
-#define ATMEGA_SPI_PORT PORTB
-#define ATMEGA_SPI_DDR  DDRB
+#define ATMEGA_SPI_PORT	PORTB
+#define ATMEGA_SPI_DDR	DDRB
 
-#define ATMEGA_MOSI 3
-#define ATMEGA_MISO 4
-#define ATMEGA_SCK  5
-#define ATMEGA_SS   2
+#define ATMEGA_MOSI	3
+#define ATMEGA_MISO	4
+#define ATMEGA_SCK	5
+#define ATMEGA_SS	2
+
+
+#define TIVA_SPI_MODE0  0
+#define TIVA_SPI_MODE1  2
+#define TIVA_SPI_MODE2  1
+#define TIVA_SPI_MODE3  3
+
+#define ATMEGA_SPI_MODE0  0
+#define ATMEGA_SPI_MODE1  1
+#define ATMEGA_SPI_MODE2  2
+#define ATMEGA_SPI_MODE3  3
+
+#define MASTER  0
+#define SLAVE   1
+
+#define MSB     0
+#define LSB     1
 
 
 /**
- * @brief Device mode: Master or Slave
- */
-typedef enum {MASTER=0, SLAVE} SPI_DEVICEMODE;
-
-
-/**
- * @brief Data mode: mode 0, mode 1, mode 2 and mode 3.
- */
-typedef enum {MODE0=0, MODE1, MODE2, MODE3} SPI_DATAMODE;
-
-
-/**
- * @brief Trasmittion bit order: MSB or LSB
- */
-typedef enum {MSB=0, LSB} SPI_BITORDER;
-
-
-/**
- * @brief Initialize SPI bus for ATmega
+ * @brief Initialize SPI Master bus for ATmega.
  *
- * Default:
- * Master: data mode 0, MSB First.
- * Slave: data mode 0, MSB First, transfer complete interrupt.
- *
- * @param mode MASTER or SLAVE.
+ * @param data_mode TIVA_SPI_MODE[0,1,2 or 3].
+ * @param prescale from 2 to 128, see datasheet.
  * @return nothing.
+ * Default: MSB First 
  */
-void atmega_spi_open(SPI_DEVICEMODE mode);
+void atmega_spi_master_init(uint8_t data_mode, uint8_t prescale);
 
 
 /**
- * @brief Initialize SPI bus for Tiva C.
+ * @brief Initialize SPI Master bus for Tiva C.
+ *
+ * @param data_mode TIVA_SPI_MODE[0,1,2 or 3].
+ * @return nothing.
+ * Default: MSB First 
+ */
+void atmega_spi_slave_init(uint8_t data_mode);
+
+
+/**
+ * @brief Initialize SPI Master bus for Tiva C.
  *
  * @param base Memory base of Tiva C SSI module.
- * @param mode MASTER or SLAVE.
+ * @param data_mode TIVA_SPI_MODE[0,1,2 or 3].
+ * @param speed should be lower than FSSI/2.
+ * @param data_width from 4 to 16 bits.
  * @return nothing.
  */
-void tiva_spi_open(uint32_t base, SPI_DEVICEMODE mode);
+void tiva_spi_master_init(uint32_t base, 
+                            uint32_t data_mode, 
+                            uint32_t speed, 
+                            uint8_t data_width);
 
 
 /**
- * @brief Set bit order for SPI transmitting.
+ * @brief Initialize SPI Slave bus for Tiva C.
+ *
+ * @param base Memory base of Tiva C SSI module.
+ * @param data_mode TIVA_SPI_MODE[0,1,2 or 3].
+ * @param data_width from 4 to 16 bits.
+ * @return nothing.
+ */
+void tiva_spi_slave_init(uint32_t base, uint32_t data_mode, uint8_t data_width);
+
+
+
+/**
+ * @brief Set bit order for SPI transferting.
  * Only for ATmega.
  * @param order MSB or LSB.
  * @return nothing.
  */
-void spi_setBitOrder(SPI_BITORDER order);
+void atmega_spi_setBitOrder(uint8_t order);
 
 
 /**
- * @brief Set data mode for SPI transmitting.
+ * @brief Set data mode for SPI transferting.
  * Only for ATmega.
  * @param mode MODE0, MODE1, MODE2 or MODE3.
  * @return nothing.
  */
-void spi_setDataMode(SPI_DATAMODE mode);
+void atmega_spi_setDataMode(uint8_t mode);
 
 
 /**
@@ -92,7 +117,7 @@ void spi_setDataMode(SPI_DATAMODE mode);
  * @param factor 2,4,8,16,32,64,128.
  * @return nothing.
  */
-void spi_setPrescaler(uint8_t factor);
+void atmega_spi_setPrescaler(uint8_t factor);
 
 
 /**
@@ -129,9 +154,9 @@ void spi_sendBuffer(const void *buffer, uint16_t len);
 
 
 /**
- * @brief shift 1 byte to SPI bus.
- * @param data 1-byte data will be shifted out.
- * @return 1-byte data will be shifted in.
+ * @brief transfer 1 byte to SPI bus.
+ * @param data 1-byte data.
+ * @return 1-byte received data.
  */
 uint8_t spi_transfer_byte(uint8_t data);
 
